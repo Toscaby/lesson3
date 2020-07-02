@@ -10,12 +10,15 @@ import com.tosca.aboutme.databinding.ActivityMain2Binding
 
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMain2Binding
+  // Instance of MyName data class.
+  private val myName: MyName = MyName("Tosca")
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 //    setContentView(R.layout.activity_main2)
 
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
+    binding.myName = myName
   }
 
   fun addNickname(view: View) {

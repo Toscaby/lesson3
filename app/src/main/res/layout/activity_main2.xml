@@ -3,6 +3,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <!-- Declare a variable by specifying a name and a data type. -->
+        <!-- Use fully qualified name for the type. -->
+        <variable
+            name="myName"
+            type="com.tosca.aboutme.MyName" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +22,7 @@
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:text="@={myName.name}"
             android:textAlignment="center" />
 
         <EditText
@@ -25,6 +33,7 @@
             android:autofillHints="@string/what_is_your_nickname"
             android:ems="10"
             android:hint="@string/what_is_your_nickname"
+            android:text="@={myName.name}"
             android:inputType="textPersonName" />
 
         <Button
@@ -44,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text=""
+            android:text="@={myName.name}"
             android:visibility="gone" />
 
         <ImageView
